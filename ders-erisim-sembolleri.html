@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engelli Erişim Sembolleri Eğitimi - İşaret ve Ses Öğrenme Platformu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .sembol-karti {
+            display: flex;
+            align-items: flex-start; /* Dikeyde üste hizala, uzun açıklamalarda daha iyi durabilir */
+            border: 1px solid var(--kenarlik-rengi-acik);
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .sembol-karti img {
+            width: 70px; /* Biraz küçülttüm */
+            height: 70px;
+            object-fit: contain;
+            margin-right: 25px;
+            flex-shrink: 0;
+            background-color: #f8f8f8; /* Açık gri arka plan */
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid var(--kenarlik-rengi-acik);
+        }
+        .sembol-karti .aciklama h4 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 1.15em; /* Biraz büyüttüm */
+            color: var(--baslik-rengi);
+        }
+        .sembol-karti .aciklama p {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+         /* Mobil için ek ayar */
+        @media screen and (max-width: 600px) {
+            .sembol-karti {
+                flex-direction: column; /* Mobilde ikon üste, metin alta */
+                align-items: center;
+                text-align: center;
+            }
+            .sembol-karti img {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>İşaret ve Ses Öğrenme Platformu</h1>
+        <button class="menu-toggle" aria-label="Menüyü Aç/Kapat" aria-expanded="false">☰</button>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="isaret-dili.html">İşaret Dili Dersleri</a></li>
+            <li><a href="braille-egitimi.html">Braille Eğitimi</a></li>
+            <li><a href="testler.html">Testler</a></li>
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+    </nav>
+
+    <main>
+        <h2>Engelli Erişim Sembolleri ve Anlamları</h2>
+        <p>Günlük hayatta sıkça karşılaştığımız engelli erişim sembollerinin ne anlama geldiğini öğrenerek daha bilinçli ve duyarlı olabiliriz.</p>
+        <hr>
+
+        <section class="ders-bolumu">
+
+            <article class="sembol-karti">
+                <img src="newges/Erişilebilirliğin Sembolü.webp" alt="Erişilebilirlik Sembolü (Tekerlekli Sandalye)">
+                <div class="aciklama">
+                    <h4>Erişilebilirlik Sembolü (Tekerlekli Sandalye)</h4>
+                    <p>Hareket kabiliyeti kısıtlı bireyler (tekerlekli sandalye kullanıcıları dahil) için fiziksel erişimin sağlandığı alanları (giriş, tuvalet, rampa vb.) belirtir.</p>
+                </div>
+            </article>
+
+            <article class="sembol-karti">
+                <img src="newges/Düşük Görme Engellilere Erişim.webp" alt="Düşük Görme Engellilere Erişim Sembolü">
+                <div class="aciklama">
+                    <h4>Düşük Görme Engellilere Erişim</h4>
+                    <p>Az gören veya kör bireyler için erişilebilirlik özelliklerinin (örneğin rehberli tur, dokunsal materyaller, iyi aydınlatma) bulunduğunu gösterir.</p>
+                </div>
+            </article>
+
+            <article class="sembol-karti">
+                <img src="newges/TV, Video ve Film için Sesli Betimleme.webp" alt="Sesli Betimleme Sembolü">
+                <div class="aciklama">
+                    <h4>Sesli Betimleme (TV, Video ve Film için)</h4>
+                    <p>Görsel medyadaki (TV, film, video) temel görsel unsurların, görme engelli veya az gören bireyler için sesli olarak anlatıldığı bir hizmetin mevcut olduğunu belirtir.</p>
+                </div>
+            </article>
+
+            <article class="sembol-karti">
+                <img src="newges/Telefon Daktilosu (TTY).webp" alt="Telefon Daktilosu (TTY) Sembolü">
+                <div class="aciklama">
+                    <h4>Telefon Daktilosu (TTY)</h4>
+                    <p>İşitme veya konuşma engelli bireylerin metin tabanlı iletişim kurabilmesi için TTY (metin telefonu) cihazının kullanılabileceğini belirtir.</p>
+                </div>
+            </article>
+
+            <article class="sembol-karti">
+                <img src="newges/Ses Kontrollü Telefon.webp" alt="Ses Kontrollü Telefon Sembolü">
+                <div class="aciklama">
+                    <h4>Ses Kontrollü Telefon</h4>
+                    <p>Telefonun ses yükseltme veya ayarlanabilir ses kontrolü gibi özelliklere sahip olduğunu, işitme güçlüğü çeken bireyler için uygun olduğunu belirtir.</p>
+                </div>
+            </article>
+
+            <article class="sembol-karti">
+                <img src="newges/İşaret Dili Tercümesi.webp" alt="İşaret Dili Tercümesi Sembolü">
+                <div class="aciklama">
+                    <h4>İşaret Dili Tercümesi</h4>
+                    <p>Belirli bir etkinlik, program, yayın veya hizmet için işaret dili tercümesi sağlandığını gösterir.</p>
+                </div>
+            </article>
+
+            <article class="sembol-karti">
+                <img src="newges/Erişilebilir Baskı.webp" alt="Erişilebilir Baskı (Büyük Punto) Sembolü">
+                <div class="aciklama">
+                    <h4>Erişilebilir Baskı (Büyük Punto)</h4>
+                    <p>18 punto veya daha büyük metinle basılmış materyalleri ifade eder. Kitap, broşür, rehber gibi dokümanların büyük puntolu versiyonlarının olduğunu veya bu formatta sunulabileceğini gösterir. İyi kontrast, uygun yazı tipi ve yeterli harf/kelime aralığı önemlidir.</p>
+                </div>
+            </article>
+
+            <article class="sembol-karti">
+                <img src="newges/Bilgi Sembolü.webp" alt="Bilgi Sembolü">
+                <div class="aciklama">
+                    <h4>Bilgi Sembolü</h4>
+                    <p>Erişilebilirlik düzenlemeleri, hizmetleri veya materyalleri (örneğin, büyük puntolu dokümanlar, ses kayıtları, işaret dili tercümeli turlar) hakkında bilgi alınabilecek noktaları (bilgi/güvenlik masası vb.) gösterir.</p>
+                </div>
+            </article>
+
+            <article class="sembol-karti">
+                <img src="newges/Braille Sembolü.webp" alt="Braille Sembolü">
+                <div class="aciklama">
+                    <h4>Braille Sembolü</h4>
+                    <p>Sergi etiketleri, yayınlar ve tabelalar da dahil olmak üzere basılı materyallerin Braille formatında mevcut olduğunu gösterir.</p>
+                </div>
+            </article>
+
+            <article class="sembol-karti">
+                <img src="newges/Canlı Sesli Açıklama.webp" alt="Canlı Sesli Açıklama Sembolü">
+                <div class="aciklama">
+                    <h4>Canlı Sesli Açıklama</h4>
+                    <p>Görme engelli veya az gören bireyler için performanslar ve görsel sanatlarda, eğitimli bir betimleyici tarafından görsel unsurların canlı olarak anlatıldığı bir hizmetin (genellikle kulaklık ile) sunulduğunu belirtir.</p>
+                </div>
+            </article>
+
+            <article class="sembol-karti">
+                <img src="newges/İşitme Kaybı İçin Erişim.webp" alt="İşitme Kaybı İçin Erişim Sembolü">
+                <div class="aciklama">
+                    <h4>İşitme Kaybı İçin Erişim</h4>
+                    <p>İşitme kaybı olan bireyler için yardımcı dinleme sistemlerinin (örneğin kızılötesi, indüksiyon döngüsü, FM sistemleri) bulunduğunu gösterir. Bu sistemler sesi doğrudan işitme cihazlarına veya kulaklıklara iletir.</p>
+                </div>
+            </article>
+
+             <article class="sembol-karti">
+                <img src="newges/Kapalı Altyazı (CC).webp" alt="Kapalı Altyazı (CC) Sembolü">
+                <div class="aciklama">
+                    <h4>Kapalı Altyazı (CC)</h4>
+                    <p>Video içeriklerde, işitme engelli veya işitme güçlüğü çeken bireyler için konuşmaların ve önemli seslerin metin olarak ekranda gösterildiği kapalı altyazıların mevcut olduğunu belirtir.</p>
+                </div>
+            </article>
+
+        </section>
+
+        <p style="margin-top:30px;">
+            <a href="index.html">&laquo; Ana Sayfaya Dön</a>
+            </p>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 İşaret ve Ses Öğrenme Platformu. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
