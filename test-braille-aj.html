@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Braille Harfleri (A-J) Testi - İşaret ve Ses Öğrenme Platformu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+         /* Metin sorusu için belki biraz daha belirgin stil */
+        #soru-metin {
+            font-size: 1.5em; /* Biraz daha büyük */
+            font-weight: bold;
+            color: #343a40; /* Koyu renk */
+            min-height: 50px; /* Yükseklik değişse de alan kalsın */
+            padding: 15px;
+            background-color: #e9ecef; /* Hafif arka plan */
+            border-radius: 5px;
+            margin-bottom: 25px;
+        }
+         /* Diğer test stilleri style.css'den gelecek (.secenek-btn, .dogru, .yanlis vb.) */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>İşaret ve Ses Öğrenme Platformu</h1>
+        <button class="menu-toggle" aria-label="Menüyü Aç/Kapat" aria-expanded="false">☰</button> 
+    </header>
+
+    <nav>
+         <ul>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="isaret-dili.html">İşaret Dili Dersleri</a></li>
+            <li><a href="braille-egitimi.html">Braille Eğitimi</a></li> 
+            <li><a href="testler.html">Testler</a></li> 
+            <li><a href="hakkimizda.html">Hakkımızda</a></li> 
+            <li><a href="iletisim.html">İletişim</a></li> 
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Braille Harfleri (A-J) Testi</h2>
+
+        <div id="quiz-container">
+            <p id="soru-metin"></p> 
+
+            <div id="secenekler">
+                <button class="secenek-btn"></button>
+                <button class="secenek-btn"></button>
+                <button class="secenek-btn"></button>
+                <button class="secenek-btn"></button>
+            </div>
+            <p id="sonuc"></p>
+            <button id="sonraki-btn" style="display: none;">Sonraki Soru</button>
+        </div>
+
+        <div id="skor-alani" style="display: none;">
+            <h2>Test Bitti!</h2>
+            <p>Skorunuz: <span id="skor"></span></p>
+            <button id="tekrar-btn">Tekrar Dene</button>
+        </div>
+
+         <p style="margin-top: 30px;"><a href="testler.html">&laquo; Testler Sayfasına Geri Dön</a></p>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 İşaret ve Ses Öğrenme Platformu. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script src="script.js"></script> 
+    <script src="quiz-data.js"></script> 
+    <script> const aktifSorular = window.quizData.sorularBrailleAJ; </script> 
+    <script src="quiz-logic.js"></script> 
+    <script> testiBaslat(); </script>
+</body>
+</html>

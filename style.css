@@ -1,0 +1,534 @@
+/* style.css - Hayatı Paylaş Revizyonu */
+
+/* Değişken Tanımlamaları (Yeni Palet ve Fontlar) */
+:root {
+    /* Yeni Renk Paleti */
+    --ana-renk: #808000; /* Zeytin Yeşili */
+    --ana-renk-koyu: #556B2F; /* Koyu Zeytin */
+    --ikincil-renk: #F5F5DC; /* Bej */
+    --vurgu-rengi: #FFA07A; /* Yumuşak Turuncu (şimdilik az kullanıldı) */
+    --arka-plan-genel: #FFFDD0; /* Krem */
+    --arka-plan-icerik: var(--ikincil-renk); /* Bej içerik arka planı */
+    --metin-rengi: #333333; /* Koyu Gri/Siyah metin */
+    --baslik-rengi: #000000; /* Siyah başlıklar */
+    --buton-metin-rengi: #ffffff; /* Beyaz (Yeşil buton üzerine) */
+    --link-rengi: var(--ana-renk-koyu); /* Linkler için Koyu Zeytin */
+    --kenarlik-rengi: #D2B48C; /* Ten Rengi / Açık Kahve (Bej ile uyumlu) */
+    --kenarlik-rengi-acik: #e0dcb9; /* Bej'in biraz koyusu */
+    --golge-rengi-hafif: rgba(0, 0, 0, 0.05);
+    --golge-rengi-orta: rgba(0, 0, 0, 0.08);
+    --golge-rengi-koyu: rgba(0, 0, 0, 0.1);
+    --dogru-renk: #2E8B57; /* Deniz Yeşili (Yeşil palete uygun) */
+    --yanlis-renk: #CD5C5C; /* Hint Kırmızısı */
+    --yer-tutucu-arka-plan: #E8E4C9; /* Bej'in biraz koyusu */
+    --yer-tutucu-metin: #706e5f; /* Kahvemsi gri */
+
+    /* Yeni Yazı Tipleri */
+    --font-ana: 'Merriweather', serif; /* Gövde */
+    --font-baslik: 'Montserrat', sans-serif; /* Başlık */
+    --font-boyut-temel: 17px; /* Serif için biraz daha büyük temel boyut */
+}
+
+/* Genel Sayfa Ayarları */
+body {
+    font-family: var(--font-ana);
+    margin: 0; 
+    padding: 0;
+    background-color: var(--arka-plan-genel); 
+    color: var(--metin-rengi); 
+    line-height: 1.7; /* Serif için satır aralığını biraz artır */
+    font-size: var(--font-boyut-temel);
+    -webkit-font-smoothing: antialiased; /* Fontları daha pürüzsüz gösterme */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ana Başlık ve Altbilgi */
+header, footer {
+    background-color: var(--ana-renk-koyu); /* Koyu Zeytin */
+    color: var(--buton-metin-rengi); 
+    padding: 15px 0; /* Padding'i biraz azalttım */
+    text-align: center; 
+}
+
+footer {
+    padding: 20px 0; /* Footer padding biraz daha fazla */
+    margin-top: 40px; 
+    font-size: 0.9em;
+}
+
+header h1 {
+    margin: 0;
+    padding-bottom: 0; /* Alt boşluğu kaldırdım */
+    font-family: var(--font-baslik);
+    font-weight: 700; /* Kalın başlık */
+    font-size: 1.8em; /* Biraz küçülttüm, sadeleşti */
+    letter-spacing: 1px; /* Harf arası boşluk */
+}
+
+/* Hamburger Menü Butonu */
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: 1px solid var(--buton-metin-rengi);
+    color: var(--buton-metin-rengi);
+    font-size: 1.8em; 
+    padding: 0px 8px; 
+    cursor: pointer;
+    position: absolute; 
+    top: 15px; /* Header padding'i azaldığı için ayarladım */
+    right: 20px; 
+    border-radius: 3px;
+    z-index: 11; 
+}
+
+header {
+    position: relative; 
+}
+
+/* Navigasyon Menüsü */
+nav {
+    background-color: var(--ana-renk); /* Ana Zeytin Yeşili */
+    padding: 12px 0; /* Biraz daha ince */
+    text-align: center; 
+}
+
+nav ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block; 
+    margin: 0 18px; /* Linkler arası boşluk */
+}
+
+nav ul li a {
+    color: var(--buton-metin-rengi); 
+    text-decoration: none; 
+    font-size: 1em; /* Biraz küçülttüm */
+    padding: 8px 0; /* Dikey padding */
+    font-family: var(--font-baslik);
+    font-weight: 500; /* Orta kalınlık */
+    text-transform: uppercase; /* Büyük harf */
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease; 
+}
+
+nav ul li a:hover,
+nav ul li a:focus { /* Hover ve Focus durumları */
+    color: rgba(255, 255, 255, 0.8); 
+}
+
+/* Ana İçerik Alanı */
+main {
+    max-width: 980px; /* Biraz genişlettim */
+    margin: 30px auto; /* Boşlukları artırdım */
+    padding: 30px; /* İç boşluğu artırdım */
+    background-color: var(--arka-plan-icerik); 
+    border-radius: 5px; /* Daha az yuvarlak köşe */
+    box-shadow: 0 3px 10px var(--golge-rengi-orta); 
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-baslik);
+    color: var(--baslik-rengi); 
+    margin-top: 1.8em; /* Başlıklar arası dikey boşluk */
+    margin-bottom: 0.8em;
+    line-height: 1.4; /* Başlık satır aralığı */
+    font-weight: 700; /* Kalın başlıklar */
+}
+/* İlk başlığın üst boşluğunu kaldır */
+main > h2:first-of-type, 
+main > section:first-of-type > h2:first-of-type, 
+main > section:first-of-type > h3:first-of-type {
+    margin-top: 0; 
+}
+
+
+h2 { font-size: 1.9em; }
+h3 { font-size: 1.6em; margin-top: 2.2em; } 
+h4 { font-size: 1.3em; font-weight: 500; } /* H4 daha ince */
+
+a { /* Genel link stili (metin içindekiler) */
+    color: var(--link-rengi);
+    text-decoration: underline; /* Altı çizili olsun */
+    font-weight: normal; /* Gövde metniyle aynı kalınlık */
+    transition: color 0.2s ease;
+}
+
+a:hover, a:focus {
+    color: var(--baslik-rengi); /* Hover'da siyah */
+    text-decoration: none; /* Hover'da alt çizgiyi kaldır */
+}
+
+/* Butonlar (Genel - .cta-button sınıfı) */
+.cta-button {
+    display: inline-block; /* Yan yana */
+    background-color: var(--ana-renk);
+    color: var(--buton-metin-rengi);
+    padding: 12px 28px; 
+    border-radius: 30px; /* Tam yuvarlak köşeler */
+    text-decoration: none; 
+    font-weight: 700; /* Kalın */
+    font-size: 1em;
+    margin: 5px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    border: 2px solid var(--ana-renk); /* Kenarlık ekle */
+    font-family: var(--font-baslik);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.cta-button:hover, .cta-button:focus {
+    background-color: var(--ana-renk-koyu);
+    border-color: var(--ana-renk-koyu);
+    transform: translateY(-2px); 
+    text-decoration: none;
+    color: var(--buton-metin-rengi);
+}
+/* İkincil Buton Stili */
+.cta-secondary {
+    background-color: transparent;
+    color: var(--ana-renk);
+    border-color: var(--ana-renk);
+}
+.cta-secondary:hover, .cta-secondary:focus {
+    background-color: var(--ana-renk);
+    color: var(--buton-metin-rengi);
+    border-color: var(--ana-renk);
+}
+/* Küçük Buton Varyasyonu */
+.cta-button.cta-small {
+    padding: 10px 22px;
+    font-size: 0.9em;
+}
+
+
+/* Kart Stilleri (Ders/Test Listeleme) */
+.ders-karti {
+    display: flex; 
+    align-items: center; /* Dikeyde ortala */
+    border: 1px solid var(--kenarlik-rengi-acik); /* Daha açık kenarlık */
+    margin-bottom: 25px; 
+    padding: 20px;
+    background-color: var(--arka-plan-icerik); 
+    border-radius: 5px; 
+    box-shadow: none; /* Başlangıçta gölge yok */
+    transition: background-color 0.2s ease, box-shadow 0.3s ease; 
+}
+.ders-karti:hover {
+    background-color: #fff; /* Beyaz */
+    box-shadow: 0 5px 15px var(--golge-rengi-orta); 
+    transform: none; /* Hover'da yukarı kalkmasın */
+}
+
+.ders-karti img,
+.ders-karti iframe,
+.ders-karti .media-placeholder { 
+    margin-right: 25px; /* Boşluk */
+    flex-shrink: 0; 
+    max-width: 120px; /* Biraz küçülttüm */
+    border-radius: 3px; 
+}
+.ders-karti .media-placeholder {
+    border: 1px dashed var(--kenarlik-rengi); 
+    width: 120px; 
+    height: 80px; /* Boyutu ayarladım */
+    background-color: var(--yer-tutucu-arka-plan); 
+    color: var(--yer-tutucu-metin); 
+    /* ... diğer stiller ... */
+}
+
+.ders-karti div { /* Metin alanı */
+    flex-grow: 1; 
+    text-align: left; /* İçerik sola hizalı */
+}
+
+.ders-karti h4 { /* Kart Başlığı */
+    margin-top: 0; 
+    margin-bottom: 8px; /* Açıklamaya yaklaştır */
+    color: var(--baslik-rengi);
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.ders-karti p { /* Kart Açıklaması */
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--metin-rengi);
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+.ders-karti a { /* "Derse Git" butonu/linki */
+    /* .cta-button stilini kullanmak yerine basit link */
+    display: inline; /* Metin akışında kalsın */
+    background-color: transparent;
+    color: var(--link-rengi);
+    padding: 0; 
+    border-radius: 0;
+    margin-top: 0;
+    text-decoration: underline; /* Altı çizili */
+    font-weight: bold;
+    font-family: var(--font-ana); 
+    transition: color 0.2s ease;
+    text-transform: none; /* Büyük harf olmasın */
+    letter-spacing: normal;
+    box-shadow: none;
+}
+
+.ders-karti a:hover, .ders-karti a:focus {
+    background-color: transparent;
+    color: var(--baslik-rengi); 
+    text-decoration: none; /* Hover'da çizgi kalksın */
+    transform: none;
+}
+
+
+/* Ders Detay Sayfası Stilleri */
+.ders-icerik .media-placeholder,
+.ders-icerik img,
+.ders-icerik iframe {
+    border-radius: 5px; 
+    margin-bottom: 30px; /* İçerikle arasını aç */
+    border: 1px solid var(--kenarlik-rengi-acik);
+}
+.ders-icerik .media-placeholder { 
+     min-height: 180px; /* Biraz artırdım */
+     background-color: var(--yer-tutucu-arka-plan); 
+     color: var(--yer-tutucu-metin); 
+     border: 1px dashed var(--kenarlik-rengi);
+}
+
+.ders-aciklama h4 {
+    margin-top: 1.8em;
+    color: var(--baslik-rengi);
+    font-weight: 700; /* H4'ü de kalın yapalım */
+}
+
+/* Liste stilleri genel olarak iyi, belki madde işareti rengi ayarlanabilir */
+.ders-aciklama ul, .ders-alistirma ul, .ders-alistirma ol {
+     margin-left: 0; /* Sol boşluğu sıfırla */
+     padding-left: 30px; /* İçeriği padding ile it */
+}
+.ders-aciklama ul li::marker, 
+.ders-alistirma ul li::marker, 
+.ders-alistirma ol li::marker {
+    color: var(--ana-renk); /* Madde işareti rengi */
+}
+
+
+/* İletişim Sayfası ve Form Stilleri */
+/* Önceki stiller büyük ölçüde yeni paletle uyumlu, sadece renkleri kontrol edelim */
+.iletisim-bolumu {
+    gap: 40px; /* Aralığı biraz açalım */
+}
+.form-grup label {
+    color: var(--baslik-rengi); /* Etiketler daha belirgin */
+    font-family: var(--font-baslik);
+    font-weight: 500;
+    font-size: 0.95em;
+}
+.form-grup input[type="text"],
+.form-grup input[type="email"],
+.form-grup textarea {
+    border: 1px solid var(--kenarlik-rengi); 
+    border-radius: 3px; /* Daha az yuvarlak */
+    font-family: var(--font-ana); 
+    background-color: #fff; /* Beyaz yapalım */
+}
+.form-grup input[type="text"]:focus,
+.form-grup input[type="email"]:focus,
+.form-grup textarea:focus {
+    border-color: var(--ana-renk);
+    box-shadow: 0 0 0 3px rgba(128, 128, 0, 0.15); /* Zeytin yeşili glow */
+}
+.form-grup button[type="submit"] {
+    /* .cta-button stilini kullansın */
+    /* Gerekirse üzerine yazılabilir */
+}
+
+
+/* Test Sayfası Stilleri (Quiz) */
+#quiz-container {
+    padding: 30px; 
+    background-color: var(--arka-plan-icerik); /* İçerik arka planı */
+    border: 1px solid var(--kenarlik-rengi-acik); 
+    border-radius: 5px;
+}
+#soru-gorsel {
+    border-color: var(--kenarlik-rengi);
+    background-color: var(--arka-plan-icerik);
+}
+#soru-metin { 
+    color: var(--baslik-rengi); 
+    background-color: var(--arka-plan-genel); /* Krem arka plan */
+    border-radius: 3px;
+    border: 1px solid var(--kenarlik-rengi-acik);
+}
+#secenekler {
+    gap: 12px; 
+}
+.secenek-btn {
+    padding: 15px 10px; 
+    font-size: 1.05em; 
+    border: 1px solid var(--kenarlik-rengi);
+    border-radius: 3px; 
+    background-color: #fff; /* Beyaz butonlar */
+    color: var(--metin-rengi);
+    font-family: var(--font-ana);
+    font-weight: normal;
+}
+.secenek-btn:hover:not(:disabled) { 
+    background-color: var(--arka-plan-genel); /* Krem hover */
+    border-color: var(--kenarlik-rengi); 
+}
+.secenek-btn.dogru {
+    background-color: var(--dogru-renk); 
+    color: var(--buton-metin-rengi);
+    border-color: var(--dogru-renk);
+}
+.secenek-btn.yanlis {
+    background-color: var(--yanlis-renk); 
+    color: var(--buton-metin-rengi);
+    border-color: var(--yanlis-renk);
+}
+#sonuc {
+    font-size: 1.1em; 
+    margin-bottom: 25px; /* Butonla arasını aç */
+}
+/* Sonraki ve Tekrar Butonları .cta-button stilini kullanabilir */
+#sonraki-btn, #tekrar-btn {
+   /* .cta-button stilini devralır, gerekirse özelleştir */
+}
+#skor-alani {
+    border: 1px solid var(--kenarlik-rengi-acik);
+    border-radius: 5px;
+    background-color: var(--arka-plan-genel);
+}
+
+
+/* Genel Odak Stili (Erişilebilirlik için) */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus { 
+    outline: 3px solid var(--ana-renk); /* Odak rengi ana renk olsun */
+    outline-offset: 1px;
+    box-shadow: none; /* Karmaşık shadow yerine basit outline */
+    border-radius: 3px; 
+}
+.menu-toggle:focus {
+   outline-color: var(--buton-metin-rengi); 
+}
+/* Form elemanlarının kendi focus stili var, bu onu ezer. İstenirse kaldırılabilir. */
+.form-grup input[type="text"]:focus,
+.form-grup input[type="email"]:focus,
+.form-grup textarea:focus {
+     outline: none; /* Genel outline'ı kaldırıp kendi border/shadow'unu kullansın */
+     border-color: var(--ana-renk);
+     box-shadow: 0 0 0 3px rgba(128, 128, 0, 0.15);
+}
+
+
+/* ============================ */
+/* Mobil Uyumluluk (Responsive) */
+/* ============================ */
+
+@media screen and (max-width: 768px) {
+
+    /* ... (Hamburger menü, genel main padding vb. önceki stiller büyük ölçüde geçerli) ... */
+
+    header h1 { font-size: 1.6em; }
+    h2 { font-size: 1.6em; }
+    h3 { font-size: 1.4em; }
+    h4 { font-size: 1.15em; }
+
+    nav ul li a { font-size: 0.95em; }
+    nav ul li a { padding: 10px 15px; text-align: left;} /* Mobil menü padding */
+
+    main { padding: 20px; }
+
+    /* Kartlar */
+    .ders-karti {
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+        padding: 15px;
+    }
+     .ders-karti img,
+     .ders-karti iframe,
+     .ders-karti .media-placeholder {
+        margin-right: 0; 
+        margin-bottom: 15px; 
+        max-width: 100%; /* Mobil kartta görsel daha büyük olabilir */
+        width: auto; 
+        height: auto; 
+    }
+    .ders-karti div { text-align: center; } /* Kart içeriği mobilde ortalı */
+    .ders-karti a { display: inline-block; margin-top: 10px;} /* Buton gibi görünsün yine */
+
+    /* Ana Sayfa Özel */
+     .hero-section.index-hero { padding: 50px 15px; }
+     .index-hero .hero-content h2 { font-size: 2em; }
+     .index-hero .hero-content p { font-size: 1.1em; }
+     .featured-sections-simplified { padding: 30px 0; gap: 25px;}
+     .feature-card-simplified { flex-direction: column; padding: 20px; }
+     .feature-icon-container { margin-right: 0; margin-bottom: 15px; }
+     .tests-promo { padding: 30px 15px; }
+
+
+    /* İletişim Formu */
+     .iletisim-bolumu { gap: 25px; }
+     .form-grup input[type="text"],
+     .form-grup input[type="email"],
+     .form-grup textarea { padding: 10px; }
+     .form-grup button[type="submit"] { padding: 10px 20px; font-size: 1em; }
+
+     /* Test alanı */
+      #secenekler { gap: 10px; }
+      .secenek-btn { padding: 12px 8px; font-size: 1em; }
+      #soru-metin { font-size: 1.4em; padding: 15px;}
+
+} 
+
+@media screen and (max-width: 480px) {
+
+    body { font-size: 16px; } /* Temel boyutu koru, okunabilirlik için */
+
+    header h1 { font-size: 1.5em; }
+    header p { font-size: 0.9em; } /* Header altı paragraf varsa */
+
+    nav ul li a { font-size: 0.9em; padding: 10px 15px; }
+
+    main { padding: 15px; margin: 15px; }
+
+    h2 { font-size: 1.5em; }
+    h3 { font-size: 1.3em; }
+    h4 { font-size: 1.1em; }
+
+    .ders-karti { padding: 15px; }
+    .ders-karti a { padding: 10px 20px; font-size: 0.95em;}
+
+    /* Ana Sayfa Özel */
+    .index-hero .hero-content h2 { font-size: 1.8em; }
+    .index-hero .hero-content p { font-size: 1em; }
+    .hero-buttons .cta-button { display: block; margin: 12px auto; }
+    .feature-content h3 { font-size: 1.3em; }
+    .feature-content p { font-size: 0.9em; }
+    .tests-promo { padding: 25px 15px; }
+    .tests-promo h3 { font-size: 1.3em; }
+
+    /* İletişim Formu */
+    .form-grup button[type="submit"] { width: 100%; } /* Buton tam genişlik */
+
+    /* Test alanı */
+    #soru-metin { font-size: 1.3em; padding: 12px;}
+    #secenekler { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .secenek-btn { padding: 15px 5px; }
+    #sonraki-btn, #tekrar-btn { padding: 10px 18px; font-size: 0.95em; width: 100%; margin-top: 15px;}
+    #sonraki-btn { margin-bottom: 10px;} /* Butonlar arası boşluk */
+
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - İşaret ve Ses Öğrenme Platformu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet"> 
+</head>
+<body>
+
+    <header>
+        <h1>İşaret ve Ses Öğrenme Platformu</h1>
+        <button class="menu-toggle" aria-label="Menüyü Aç/Kapat" aria-expanded="false">☰</button> 
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="isaret-dili.html">İşaret Dili Dersleri</a></li>
+            <li><a href="braille-egitimi.html">Braille Eğitimi</a></li> 
+            <li><a href="testler.html">Testler</a></li> 
+            <li><a href="hakkimizda.html">Hakkımızda</a></li> 
+            <li><a href="iletisim.html">İletişim</a></li> </ul>
+    </nav>
+
+    <main>
+        <h2>İletişim</h2>
+        <p>Platformumuzla ilgili soru, öneri, geri bildirim veya iş birliği talepleriniz için bizimle iletişime geçebilirsiniz. Size en kısa sürede yanıt vermeye çalışacağız.</p>
+
+        <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;">
+
+        <section class="iletisim-bolumu">
+            <div class="iletisim-bilgileri">
+                <h3>İletişim Bilgileri</h3>
+                <p><strong>E-posta:</strong> <a href="mailto:info@ornekplatform.com">info@ornekplatform.com</a></p>
+                <p>Sosyal medya hesaplarımızdan da bizi takip edebilirsiniz (Linkleri yakında eklenecektir).</p>
+                </div>
+
+                <div class="iletisim-formu">
+                    <h3>İletişim Formu</h3>
+                    <form action="#" method="post" id="iletisim-formu">
+                        <div class="form-grup">
+                            <label for="adsoyad">Adınız Soyadınız:</label>
+                            <input type="text" id="adsoyad" name="adsoyad" required placeholder="Adınızı ve soyadınızı yazın...">
+                        </div>
+                        <div class="form-grup">
+                            <label for="email">E-posta Adresiniz:</label>
+                            <input type="email" id="email" name="email" required placeholder="ornek@eposta.com">
+                        </div>
+                        <div class="form-grup">
+                            <label for="konu">Konu:</label>
+                            <input type="text" id="konu" name="konu" required placeholder="Mesajınızın konusunu belirtin..."> 
+                        </div>
+                        <div class="form-grup">
+                            <label for="mesaj">Mesajınız:</label>
+                            <textarea id="mesaj" name="mesaj" rows="6" required placeholder="Mesajınızı buraya yazın..."></textarea>
+                        </div>
+                        <div class="form-grup">
+                            <button type="submit" class="cta-button cta-small">Mesajı Gönder</button> 
+                        </div>
+                    </form>
+                    <p style="margin-top: 15px; font-size: 0.9em; color: var(--metin-rengi);">
+                        <em>*Not: Bu form şu anda aktif olarak mesaj göndermemektedir. Yalnızca arayüz örneğidir.</em>
+                    </p>
+                </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 İşaret ve Ses Öğrenme Platformu. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script src="script.js"></script> 
+</body>
+</html>
